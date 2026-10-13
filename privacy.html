@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Askloop privacy policy</title>
+<style>body{font:16px/1.6 system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;color:#172b4d}h1,h2{line-height:1.25}</style>
+</head><body>
+<h1>Askloop privacy policy</h1>
+<p>Last updated: 13 October 2026</p>
+<p>Askloop: Q&amp;A for Confluence ("Askloop") is published by Joao Duro De Matos, a sole proprietorship
+registered in Poland (NIP 9452193255), Ułanów 64D lok. 27, 31-460 Kraków, Poland.</p>
+
+<h2>The short version</h2>
+<p>Askloop runs on Atlassian Forge and is eligible for the "Runs on Atlassian" programme. It has no servers of
+its own. Everything it stores stays inside Atlassian's platform, for your Confluence site, and it sends no data to
+us or to anyone else. About people, it stores only Atlassian account ids, never names or email addresses.</p>
+
+<h2>What Askloop stores, and where</h2>
+<p>Askloop keeps its data in the Forge SQL database that Atlassian hosts for the app on your site. Only Askloop
+can read it; it is not shared with other sites or other apps.</p>
+<ul>
+<li><b>Questions:</b> title, details, the space and (if asked on a page) the page id, topic, the account id of
+the person who asked, vote and answer counts, which answer is accepted, the "verified until" date and whether the
+question is published on a FAQ page.</li>
+<li><b>Answers:</b> the text, the account id of the person who answered and, once verified, of the person who
+verified it, and the dates.</li>
+<li><b>Votes:</b> "I have this question too" and "Helpful", as the voter's account id.</li>
+<li><b>Topics:</b> name, description, optional space key, the account ids of the experts, the optional group
+names for who may ask, who may answer and moderators, the verification period and the publishing and
+notification switches.</li>
+<li><b>History:</b> for every change to a question or answer, when it happened, the account id of the person who
+made it and what kind of change it was. When a question or answer is deleted, its text is deleted too; the history
+then records only that it was deleted.</li>
+<li><b>FAQ pages and settings:</b> the id of each FAQ page the app wrote, and the app's own bookkeeping (where the
+daily and weekly jobs stopped).</li>
+<li><b>Account list:</b> the account ids stored above, kept so they can be reported to Atlassian (see Personal
+data).</li>
+</ul>
+<p>Question and answer text is stored as you typed it. Please do not put personal data there that you do not
+need.</p>
+
+<h2>What Askloop writes to Confluence</h2>
+<p>Askloop also writes to Confluence itself, through Confluence's own APIs. What it writes there is normal
+Confluence content, governed by Confluence's permissions and retention, not by the app.</p>
+<ul>
+<li><b>FAQ pages.</b> When an expert or moderator publishes an accepted answer (or a topic publishes
+automatically), Askloop writes it to a page called "FAQ: &lt;topic&gt;" in the space, with the question, the
+answer, and a mention of the person who answered and of the person who verified it. The page can be read by
+everyone who can view that space, and Confluence search and Rovo find it. Answers asked on a page with view
+restrictions (on the page or a parent page) are never published there. Every time the FAQ page is rewritten (and the daily check
+rewrites each FAQ page in turn), Askloop checks each question's page again and takes an answer off when its page was
+restricted, moved to another space or trashed. Answers that changed, or that the person who asked accepted in place
+of an earlier one, are shown labelled "Not verified" until an expert checks them.</li>
+<li><b>Page history.</b> Confluence keeps every earlier version of a page. When an answer is taken off a FAQ page
+(withdrawn, deleted, or its source page restricted), its text remains readable in the FAQ page's history by people
+who can view that page. Askloop cannot delete page versions: that needs a Confluence delete permission the app
+does not ask for. A space administrator can delete old versions from the page history.</li>
+<li><b>Page comments, only if switched on.</b> Askloop sends no email. If a topic has "Notify by page comment" on,
+Askloop adds a comment to the question's page that @mentions the experts (for a new question, or an answer due for
+review) or the person who asked (for a new answer), and Confluence notifies them as it does for any mention. The comment contains the
+question title and the mentions. Off by default, and only for questions asked on a page.</li>
+</ul>
+
+<h2>Who sees what</h2>
+<p>Confluence decides. Askloop checks, as the person using it, on every request: a question asked on a page is
+shown only to people who can view that page (page restrictions included), and a question asked in a space only to
+people who can view the space. Topics can further limit who may ask and who may answer to a Confluence group.
+Confluence administrators and a topic's moderators group can edit and delete any question or answer in it.</p>
+
+<h2>Personal data</h2>
+<p>Askloop stores the Atlassian account ids of people who ask, answer, vote, verify, are experts or appear in the
+history. It does not store names or email addresses: names are shown by Confluence's own user component each time.</p>
+<p>Once a week Askloop reports the account ids it stores to Atlassian's personal data reporting API, as Atlassian
+requires. When Atlassian answers that an account has been closed, Askloop removes that account id everywhere in its
+own data: questions and answers stay and are shown as written by "a former user", and that person's votes and
+expert roles are deleted. Mentions on FAQ pages and page comments are Confluence content and follow Confluence's own
+handling of closed accounts.</p>
+<p>Your organisation remains the controller of the data Askloop stores; we never receive it. Atlassian processes it
+under its own terms and privacy policy.</p>
+<p>When the app is uninstalled, Atlassian removes the app's stored data under its Forge data retention rules.
+Export the questions to CSV first (Askloop settings) if you want to keep them. FAQ pages and page comments stay in
+Confluence like any other page.</p>
+
+<h2>What we receive</h2>
+<p>Nothing from your Confluence content or from the questions and answers. Askloop makes no calls outside
+Atlassian. Like every Marketplace partner, we can see the licensing and install information Atlassian provides to
+partners (for example which sites have the app installed and the licence tier) and the logs Forge keeps for the app.
+Those logs record counts and errors, and an error may contain a question, page or space id. We use this information
+only to support and improve Askloop.</p>
+<p>Askloop holds no security or privacy certification of its own. It relies on Atlassian's platform, where its data
+is hosted.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:jcmatos@gmail.com">jcmatos@gmail.com</a>. User guide: <a href="support.html">support page</a>.</p>
+</body></html>

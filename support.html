@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Askloop support and user guide</title>
+<style>body{font:16px/1.6 system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;color:#172b4d}h1,h2{line-height:1.25}code{background:#f4f5f7;padding:0 .25em}</style>
+</head><body>
+<h1>Askloop support and user guide</h1>
+<p><b>Contact:</b> <a href="mailto:jcmatos@gmail.com">jcmatos@gmail.com</a>. We answer within two working days (Central European Time).</p>
+
+<h2>Getting started</h2>
+<ol>
+<li>A Confluence administrator opens <b>Askloop settings</b> (Confluence administration, under the apps settings)
+and creates a <b>topic</b>, for example "IT service desk", with its experts. Topics are optional, but experts,
+the review queue and publishing all hang on them.</li>
+<li>Edit any page and insert the <b>Askloop questions</b> macro (type <code>/Askloop</code>). People can now ask about
+that page, right there.</li>
+<li>Every space also has a <b>Questions</b> page under its space apps, with every question of the space, and the
+site has an <b>Askloop</b> page under Apps with <b>My queue</b> and <b>All questions</b>.</li>
+</ol>
+
+<h2>Asking and answering</h2>
+<ul>
+<li><b>Ask a question</b>: a title (up to 200 characters), optional details and a topic. Text is plain, with
+paragraphs.</li>
+<li>Open a question to answer it, edit it, or vote: <b>I have this question too</b> on questions, <b>Helpful</b> on
+answers. You cannot vote on your own posts.</li>
+<li>The person who asked, the topic's experts and moderators can <b>accept</b> an answer. <b>Show history</b> lists
+every change to the question and its answers: who, what and when.</li>
+<li>You can edit and delete your own posts. A question with an accepted answer can only be deleted by a moderator.
+Deleting removes the text; the history keeps only that it was deleted.</li>
+</ul>
+
+<h2>Topics, experts and roles</h2>
+<ul>
+<li><b>Experts</b> (up to 20 per topic) see the topic's unanswered questions and answers due for review in their
+queue, and can accept, verify and publish.</li>
+<li><b>Who may ask</b> and <b>Who may answer</b>: optional Confluence groups. Empty means everyone who can see the
+space. The ask limit applies to administrators too; experts can always answer.</li>
+<li><b>Moderators</b>: an optional group that can edit and delete any question or answer in the topic.
+Confluence administrators always can.</li>
+<li><b>Space key</b>: empty offers the topic in every space; with a key, only in that space.</li>
+<li>Topics can be archived and restored. Questions without a topic are open to everyone who can see the space.</li>
+</ul>
+
+<h2>Answers that stay true</h2>
+<p>When an expert or moderator accepts an answer, it is verified for the topic's period (180 days unless you change
+it, from 1 to 1095). The first time the person who asked accepts an answer, that verifies it too, with them recorded
+as the verifier.</p>
+<p>Once a day Askloop looks for accepted answers whose date has passed and flags them <b>Needs review</b>: they show
+in the experts' <b>Answers due for review</b> queue until one of them presses <b>Still correct</b>, which verifies
+the answer again for the topic's period.</p>
+<p>An answer waits for an expert, labelled "Not verified", when it changed after it was verified (edited by someone
+who is not an expert or moderator, or its published question was edited by such a person), or when the person who
+asked accepted it in place of an earlier one.</p>
+
+<h2>FAQ pages: answers that Confluence search finds</h2>
+<p>Experts and moderators can press <b>Publish to FAQ page</b> on a question with an accepted answer. Turn on
+<b>Publish accepted answers to the space's FAQ page automatically</b> on a topic to publish on every acceptance.</p>
+<ul>
+<li>Askloop writes one page per topic and space, called <b>"FAQ: &lt;topic&gt;"</b> ("FAQ: General" for questions
+without a topic). It is a normal Confluence page, so Confluence search and Rovo find it, and everyone who can view
+the space can read it.</li>
+<li>The page is written by the app: edit questions and answers in Askloop. Changes made on the page itself are
+replaced on the next update.</li>
+<li>Each answer shows who answered it and its "Verified until" date. Answers that wait for an expert are shown
+labelled <b>"Not verified"</b>; answers past their date show "Due for review since".</li>
+<li>Answers to questions asked on a page with view restrictions (on the page or a parent page) are never published.
+Each time the FAQ page is rewritten, and in the daily check, Askloop checks every question's page again and takes
+an answer off if its page has since been restricted, moved to another space or trashed.</li>
+<li><b>Remove from FAQ page</b> takes an answer off by hand.</li>
+<li><b>Page history:</b> Confluence keeps every earlier version of the FAQ page, so an answer taken off the page
+(removed, deleted, or its page restricted) can still be read in the page history by people who can view the FAQ
+page. Askloop cannot delete page versions. If that text must go, a space administrator can delete the old versions
+from the page history (page menu, Page history).</li>
+<li>If another page already uses the title and the app cannot write to it, Askloop uses "FAQ: &lt;topic&gt;
+(Askloop)". If that is taken too, Askloop settings shows the page under <b>FAQ pages Askloop cannot write</b>, with a
+<b>Try again</b> button.</li>
+<li>A FAQ page shows up to 300 answers; beyond Confluence's page size limit, a note says how many more are in
+Askloop.</li>
+</ul>
+
+<h2>Notifications</h2>
+<p>Askloop sends no email of its own (it has no servers). Experts find new questions and answers due for review in
+<b>My queue</b> on the Askloop page. Turn on <b>Notify by page comment</b> on a topic and, for questions asked on a
+page, Askloop adds a page comment that @mentions the experts (new question, or answer due for review) or the person
+who asked (new answer); Confluence then notifies them as for any mention.</p>
+
+<h2>Searching</h2>
+<p>The space Questions page and All questions search the title, details and answers (up to six words, all must
+match), and filter by status (Unanswered; Answered, none accepted; Accepted; Needs review), topic and "Only mine". Unpublished
+questions live in Askloop, not as Confluence pages, so Confluence's own search finds only the FAQ pages.</p>
+
+<h2>Who sees what</h2>
+<p>Confluence decides. On every request Askloop checks, as you, that you can view the page a question was asked on
+(page restrictions included) or, for a question asked in a space, the space. Questions you cannot see in Confluence
+do not appear anywhere in Askloop, including search, the queue and exports.</p>
+
+<h2>Import and export (Confluence administrators)</h2>
+<ul>
+<li><b>Export CSV</b> exports every question you can see with its accepted answer (people as account ids). Large
+sites export in parts: press <b>Next part</b> for the rest.</li>
+<li><b>Import</b> takes pasted CSV with a header row. Columns: space, topic, question, details, answer, accepted,
+page id. "space" (a space key) and "question" are required; new topic names are created. An answer is accepted
+unless "accepted" says no. Up to 500 rows at a time; you are recorded as the author.</li>
+<li>Every row is checked first; if one is wrong, nothing is imported. If an import is cut off, press Import again with
+the same text: rows already in are skipped, nothing is duplicated.</li>
+<li>There is no direct import from Atlassian's Questions for Confluence yet; CSV covers a manual move.</li>
+</ul>
+
+<h2>Known limits</h2>
+<ul>
+<li>Plain text with paragraphs only: no images, tables or formatting in questions and answers yet.</li>
+<li>No email from the app (see Notifications).</li>
+</ul>
+
+<h2>Your data</h2>
+<p>Askloop runs on Atlassian. Questions, answers and topics are stored in the app's Forge SQL database, hosted by
+Atlassian for your site, and only account ids are kept for people. Nothing is sent to us. See the <a
+href="privacy.html">privacy policy</a>.</p>
+</body></html>
